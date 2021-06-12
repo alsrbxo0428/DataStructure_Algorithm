@@ -1,6 +1,6 @@
 package ch01;
 
-public class Exer_Q3 {
+public class Exer_Q03 {
 	//네 값의 최솟값을 구하는 min4 메서드를 작성하세요.
 	public static int min4(int a, int b, int c, int d) {
 		int min = a;

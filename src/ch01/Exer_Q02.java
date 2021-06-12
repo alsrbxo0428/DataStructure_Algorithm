@@ -1,6 +1,6 @@
 package ch01;
 
-public class Exer_Q2 {
+public class Exer_Q02 {
 	//세 값의 최솟값을 구하는 min3 메서드를 작성하세요.
 	public static int min3(int a, int b, int c) {
 		int min = a;

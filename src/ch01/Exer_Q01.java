@@ -1,6 +1,6 @@
 package ch01;
 
-public class Exer_Q1 {
+public class Exer_Q01 {
 	//네 값의 최대값을 구하는 max4메서드를 작성하세요.
 	public static int max4(int a, int b, int c, int d) {
 		int max = a;
