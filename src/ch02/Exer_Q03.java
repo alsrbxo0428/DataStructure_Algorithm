@@ -2,7 +2,7 @@ package ch02;
 
 import java.util.Scanner;
 
-public class Exer_Q3 {
+public class Exer_Q03 {
 	public static int sumOf(int[] a) {
 		int sum = 0;
 		
