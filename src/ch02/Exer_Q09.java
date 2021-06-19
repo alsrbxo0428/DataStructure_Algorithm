@@ -2,7 +2,7 @@ package ch02;
 
 import java.util.Scanner;
 
-public class Exer_Q9 {
+public class Exer_Q09 {
 	public static int[][] mdays = {
 			{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
 			{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
