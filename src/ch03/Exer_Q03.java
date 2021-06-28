@@ -6,6 +6,12 @@ public class Exer_Q03 {
 	private static int searchIdx(int[] a, int n, int key, int[] idx) {
 		int cnt = 0;
 		
+		for(int i = 0; i < n; i++) {
+			if(a[i] == key) {
+				idx[cnt++] = i;
+			}
+		}
+		
 		return cnt;
 	}
 	
@@ -25,6 +31,15 @@ public class Exer_Q03 {
 		System.out.print("key : ");
 		int key = sc.nextInt();
 		
+		int count = searchIdx(x, n, key, idx);
+		
+		if(count == 0) {
+			System.out.println("그 값의 요소가 없습니다.");
+		} else {
+			for(int i = 0; i < count; i++) {
+				System.out.println("그 값은 x[" + idx[i] + "]에 있습니다.");
+			}
+		}
 		
 	}
 }
