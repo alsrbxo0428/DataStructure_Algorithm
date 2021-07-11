@@ -1,57 +1,57 @@
 package ch04;
 
-public class IntStack {
+public class Exer_Q02<E> {
 	private int max;	//스택 용량
 	private int ptr;	//스택 포인터
-	private int[] stk;	//스택 본체
+	private E[] stk;	//스택 본체
 	
 	//실행 시 예외 : 스택이 비어있음
-	public class EmptyIntStackException extends RuntimeException {
-		public EmptyIntStackException() {	}
+	public static class EmptyEStackException extends RuntimeException {
+		public EmptyEStackException() {	}
 	}//EmptyIntStackException
 	
 	//실행 시 예외 : 스택이 가득 참
-	public class OverflowStackException extends RuntimeException {
-		public OverflowStackException() {	}
+	public static class OverflowEStackException extends RuntimeException {
+		public OverflowEStackException() {	}
 	}//OverflowStackException
 	
 	//생성자
-	public IntStack(int capacity) {
+	public Exer_Q02(int capacity) {
 		ptr = 0;
 		max = capacity;
 		try {
-			stk = new int[max];		//스택 본체용 배열을 생성	
+			stk = (E[]) new Object[max];		//스택 본체용 배열을 생성	
 		} catch (OutOfMemoryError e) {	//생성할 수 없음
 			max = 0;
 		}
 	}//생성자
 	
 	//스택에 x를 푸시
-	public int push(int x) throws OverflowStackException {
+	public E push(E x) throws OverflowEStackException {
 		if(ptr >= max) {	//스택이 가득 참
-			throw new OverflowStackException();
+			throw new OverflowEStackException();
 		}
 		return stk[ptr++] = x;
 	}//push
 	
 	//스택에서 데이터를 팝(정상에 있는 데이터를 꺼냄)
-	public int pop() throws EmptyIntStackException {
+	public E pop() throws EmptyEStackException {
 		if(ptr <= 0) {		//스택이 비어 있음
-			throw new EmptyIntStackException();
+			throw new EmptyEStackException();
 		}
 		return stk[--ptr];
 	}//pop
 	
 	//스택에서 데이터를 피크(정상에 있는 데이터를 들여다봄)
-	public int peek() throws EmptyIntStackException {
+	public E peek() throws EmptyEStackException {
 		if(ptr <= 0) {
-			throw new EmptyIntStackException();
+			throw new EmptyEStackException();
 		}
 		return stk[ptr - 1];
 	}//peek
 	
 	//스택에서 x를 찾아 인덱스(없으면 -1)를 반환
-	public int indexOf(int x) {
+	public int indexOf(E x) {
 		for(int i = ptr - 1; i >= 0; i--) {
 			if(stk[i] == x)
 				return i;
